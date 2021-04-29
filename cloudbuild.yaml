@@ -3,6 +3,23 @@ steps:
       entrypoint: yarn
       args: ['install']
     
-    - name: 'dxheroes/dx-scanner:latest'
+    - name: 'gcr.io/whereis-1563781546305/vlasy-scanner:tag2'
       entrypoint: 'dx-scanner'
       args: ['run', "--ci"]
+      env:
+        - 'DEBUG=*'
+        - 'GITHUB_TOKEN=$_GITHUB_TOKEN'
+        - 'BUILD=$BUILD_ID'
+        - 'PROJECT_ID=$PROJECT_ID'
+        - 'PROJECT_NUMBER=$PROJECT_NUMBER'
+        - 'REV=$REVISION_ID'
+        - 'TRIGGER_NAME=$TRIGGER_NAME'
+        - 'COMMIT_SHA=$COMMIT_SHA'
+        - 'SHORT_SHA=$SHORT_SHA'
+        - 'REPO_NAME=$REPO_NAME'
+        - 'BRANCH_NAME=$BRANCH_NAME'
+        - 'TAG_NAME=$TAG_NAME'
+        - '_HEAD_BRANCH=$_HEAD_BRANCH'
+        - '_BASE_BRANCH=$_BASE_BRANCH'
+        - '_HEAD_REPO_URL=$_HEAD_REPO_URL'
+        - '_PR_NUMBER=$_PR_NUMBER'
