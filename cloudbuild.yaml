@@ -3,7 +3,7 @@ steps:
       entrypoint: yarn
       args: ['install']
     
-    - name: 'gcr.io/whereis-1563781546305/vlasy-scanner:tag2'
+    - name: 'gcr.io/whereis-1563781546305/vlasy-scanner:tag3'
       entrypoint: 'dx-scanner'
       args: ['run', "--ci"]
       env:
