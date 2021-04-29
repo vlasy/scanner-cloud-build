@@ -1,0 +1,8 @@
+steps:
+    - name: node:12
+      entrypoint: yarn
+      args: ['install']
+    
+    - name: 'dxheroes/dx-scanner:latest'
+      entrypoint: 'dx-scanner'
+      args: ['run', "--ci"]
