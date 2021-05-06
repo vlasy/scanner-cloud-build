@@ -6,6 +6,40 @@ steps:
     - name: 'gcr.io/cloud-builders/gcloud'
       entrypoint: 'bash'
       args: ['-c', 'printenv']
+      env:
+        - 'DEBUG=*'
+        - 'GITHUB_TOKEN=$_GITHUB_TOKEN'
+        - 'BUILD=$BUILD_ID'
+        - 'REPO_URL=$_REPO_URL'
+        - 'PROJECT_ID=$PROJECT_ID'
+        - 'PROJECT_NUMBER=$PROJECT_NUMBER'
+        - 'REV=$REVISION_ID'
+        - 'TRIGGER_NAME=$TRIGGER_NAME'
+        - 'COMMIT_SHA=$COMMIT_SHA'
+        - 'SHORT_SHA=$SHORT_SHA'
+        - 'REPO_NAME=$REPO_NAME'
+        - 'BRANCH_NAME=$BRANCH_NAME'
+        - 'TAG_NAME=$TAG_NAME'
+        - '_HEAD_BRANCH=$_HEAD_BRANCH'
+        - '_BASE_BRANCH=$_BASE_BRANCH'
+        - '_HEAD_REPO_URL=$_HEAD_REPO_URL'
+        - '_PR_NUMBER=$_PR_NUMBER'
+        - 'A_HEAD_BRANCH={$_HEAD_BRANCH}'
+        - 'A_BASE_BRANCH={$_BASE_BRANCH}'
+        - 'A_HEAD_REPO_URL={$_HEAD_REPO_URL}'
+        - 'A_PR_NUMBER={$_PR_NUMBER}'
+        - B_HEAD_BRANCH={$_HEAD_BRANCH}
+        - B_BASE_BRANCH={$_BASE_BRANCH}
+        - B_HEAD_REPO_URL={$_HEAD_REPO_URL}
+        - B_PR_NUMBER={$_PR_NUMBER}
+        - C_HEAD_BRANCH=$_HEAD_BRANCH
+        - C_BASE_BRANCH=$_BASE_BRANCH
+        - C_HEAD_REPO_URL=$_HEAD_REPO_URL
+        - C_PR_NUMBER=$_PR_NUMBER
+
+    - name: 'gcr.io/cloud-builders/gcloud'
+        entrypoint: 'bash'
+        args: ['-c', 'echo' '"https://api.github.com/repos/davidstanke/stanke.dev/issues/$_PR_NUMBER/comments"']
     
     - name: 'gcr.io/whereis-1563781546305/vlasy-scanner:tag3'
       entrypoint: 'dx-scanner'
