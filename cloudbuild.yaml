@@ -28,6 +28,10 @@ steps:
         - 'A_BASE_BRANCH={$_BASE_BRANCH}'
         - 'A_HEAD_REPO_URL={$_HEAD_REPO_URL}'
         - 'A_PR_NUMBER={$_PR_NUMBER}'
+
+    - name: 'gcr.io/cloud-builders/gcloud'
+      entrypoint: 'bash'
+      args: ['-c', 'echo' '$_PR_NUMBER']
     
     - name: 'gcr.io/whereis-1563781546305/vlasy-scanner:tag3'
       entrypoint: 'dx-scanner'
