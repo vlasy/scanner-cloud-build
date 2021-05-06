@@ -3,14 +3,6 @@ steps:
       entrypoint: yarn
       args: ['install']
 
-    - id: Initialize git
-      name: gcr.io/cloud-builders/git
-      entrypoint: /bin/bash
-      args:
-      - '-c'
-      - |
-        git clone $_HEAD_REPO_URL tmp
-    
     - name: 'gcr.io/whereis-1563781546305/vlasy-scanner:tag3'
       entrypoint: 'dx-scanner'
       args: ['run', "--ci"]
@@ -32,16 +24,4 @@ steps:
         - '_BASE_BRANCH=$_BASE_BRANCH'
         - '_HEAD_REPO_URL=$_HEAD_REPO_URL'
         - '_PR_NUMBER=$_PR_NUMBER'
-        - 'A_HEAD_BRANCH={$_HEAD_BRANCH}'
-        - 'A_BASE_BRANCH={$_BASE_BRANCH}'
-        - 'A_HEAD_REPO_URL={$_HEAD_REPO_URL}'
-        - 'A_PR_NUMBER={$_PR_NUMBER}'
-        - B_HEAD_BRANCH={$_HEAD_BRANCH}
-        - B_BASE_BRANCH={$_BASE_BRANCH}
-        - B_HEAD_REPO_URL={$_HEAD_REPO_URL}
-        - B_PR_NUMBER={$_PR_NUMBER}
-        - C_HEAD_BRANCH=$_HEAD_BRANCH
-        - C_BASE_BRANCH=$_BASE_BRANCH
-        - C_HEAD_REPO_URL=$_HEAD_REPO_URL
-        - C_PR_NUMBER=$_PR_NUMBER
 
