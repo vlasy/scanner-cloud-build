@@ -1,0 +1,8 @@
+{
+  "name": "scanner-cloud-build",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:vlasy/scanner-cloud-build.git",
+  "author": "M",
+  "license": "MIT"
+}
