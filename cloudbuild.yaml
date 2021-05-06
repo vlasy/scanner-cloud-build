@@ -10,6 +10,7 @@ steps:
         - 'DEBUG=*'
         - 'GITHUB_TOKEN=$_GITHUB_TOKEN'
         - 'BUILD=$BUILD_ID'
+        - 'REPO_URL=$_REPO_URL'
         - 'PROJECT_ID=$PROJECT_ID'
         - 'PROJECT_NUMBER=$PROJECT_NUMBER'
         - 'REV=$REVISION_ID'
