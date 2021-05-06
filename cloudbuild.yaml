@@ -22,6 +22,6 @@ steps:
         - 'TAG_NAME=$TAG_NAME'
         - '_HEAD_BRANCH=$_HEAD_BRANCH'
         - '_BASE_BRANCH=$_BASE_BRANCH'
-        - '_HEAD_REPO_URL=$_HEAD_REPO_URL'
-        - '_PR_NUMBER=$_PR_NUMBER'
+        - 'CLOUDBUILD_HEAD_REPO_URL=$_HEAD_REPO_URL'
+        - 'CLOUDBUILD_PR_NUMBER=$_PR_NUMBER'
 
