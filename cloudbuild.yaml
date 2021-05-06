@@ -7,7 +7,7 @@ steps:
       name: gcr.io/cloud-builders/git
       entrypoint: /bin/bash
       args:
-      - -exc
+      - '-c'
       - |
         # Cloud Build x GitHub integration uses source archives to fetch
         # the source, rather than Git source fetching, and as a consequence
