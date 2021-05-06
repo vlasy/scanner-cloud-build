@@ -31,7 +31,7 @@ steps:
 
     - name: 'gcr.io/cloud-builders/gcloud'
       entrypoint: 'bash'
-      args: ['-c', 'echo', '$_PR_NUMBER']
+      args: ['-c', 'echo', '"$_PR_NUMBER"']
     
     - name: 'gcr.io/whereis-1563781546305/vlasy-scanner:tag3'
       entrypoint: 'dx-scanner'
