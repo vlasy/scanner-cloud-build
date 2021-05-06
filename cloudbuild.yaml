@@ -2,6 +2,10 @@ steps:
     - name: node:12
       entrypoint: yarn
       args: ['install']
+
+    - name: 'gcr.io/cloud-builders/gcloud'
+      entrypoint: 'bash'
+      args: ['-c', 'printenv']
     
     - name: 'gcr.io/whereis-1563781546305/vlasy-scanner:tag3'
       entrypoint: 'dx-scanner'
